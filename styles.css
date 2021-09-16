@@ -1,0 +1,318 @@
+html {
+    /*background-image: url("images/parchment-small.webp");*/
+    /* background-repeat: no-repeat; */
+    /* background-size: cover; */
+    /*background-position: center;*/
+	/*background-size: cover;*/
+	height: 95vh;
+	--element-bg-colour: #5B0220;
+    --white: #dcdcdc;
+}
+* {
+    font-family: "Georgia", Times, serif;
+    /*line-height: 1.2;*/
+    border-radius: 0.3em;
+}
+body {
+	/* max-width: 100%; */
+    font-size: 17px;
+	margin: 0; /* fixes problem where a sliver of the background image would appear above the header image */
+    margin-left: auto;
+	margin-right: auto;
+	height: 100%;
+}
+header { 
+    text-align: center;
+}
+.header {
+	min-width: 100%;
+	min-height: 100%;
+    z-index: -9;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+	top: 0;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0; /*removes ugly white space at top left and right corners */
+}
+.bg { /*background image, had to do it by a real image in the HTML to make it work nicely on both phone and any size pc screen. Anything I did to fix for one caused tiling or blurriness for the other.*/
+    min-width: 100%;
+	min-height: 100%;
+    z-index: -10;
+    position: fixed;
+    margin-left: auto;
+    margin-right: auto;
+	top: 0;
+    border-radius: 0;
+}
+main {
+	background-color: rgba(255, 255, 255, 0.04);
+    margin-left: auto; 
+    margin-right: auto;
+}
+section {
+    break-inside: avoid;
+}
+article {
+	border-bottom: 1px solid black;
+    border-bottom-width: thin;
+	margin-bottom: 3em;
+	padding-bottom: 2em;
+    column-width: 30em;
+	/* column-count: 2; */
+    column-fill: auto;
+}
+#didyouknow, .quote {
+	border: 1px solid black;
+	background-color: var(--element-bg-colour);
+	float: left;
+	width: 12em;
+	margin: 1em;
+}
+.quote {
+    float: right;
+}
+p {
+    margin-left: 0.5em;
+    margin-right: 0.5em;
+}
+h1~p {
+	text-align: center;
+	column-span: all;
+}
+nav>p {
+	margin-bottom: 0em;
+}
+
+/* nav stuff */
+nav>ul {
+	position: relative;
+	display: inline-block;
+}
+.dropdown-content {
+	display: none;
+	position: absolute;
+    top: 2em;
+    border: 0.1em solid black;
+    background-color: white;
+    padding: 0;
+	left: 0;
+	width: inherit;
+}
+#interpage>ul:hover .dropdown-content {
+	display: block;
+}
+.sidebar {
+    display: none;
+    margin: 0;
+    padding: 0;
+    left: 0;
+    margin-top: 5%;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    min-width: 10%;
+	background-color: inherit;
+    border: 0.1em solid black;
+    position: fixed;
+    /* height: 20%; */
+    overflow: auto;
+}
+nav ul {
+    list-style: none;
+	margin-bottom: auto;
+    margin-top: auto;
+	padding: 0.5em;
+}
+#interpage li {
+    display: inline;
+    background-color: inherit;
+}
+#interpage li.real {
+	padding-left: 2em;
+	padding-right: 2em;
+}
+#interpage li.real>a {
+	display: inline-block;
+    color: white;
+    padding: 0;
+}
+#interpage li.real>a:hover {
+	background-color: var(--element-bg-colour);
+}
+.dropdown-content>li {
+	padding: 0;
+}
+#interpage>ul>li {
+    text-decoration: none;
+	width: 100%
+}
+nav, #didyouknow, .quote, figure {
+    color: white;
+    background-color: var(--element-bg-colour);
+	break-inside: avoid;
+    text-align: center;
+}
+a {
+	color: grey;
+    text-decoration: none;
+}
+#interpage a {
+    padding: 1em;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+	color: black;
+	display: block;
+    text-decoration: none;
+}
+#interpage a[href = ""] {
+	background-color: gray;
+}
+#interpage a:hover {
+    background-color: #A9A9A9;
+}
+article>nav {
+	border: 1px solid black;
+	margin-left: 0.5em;
+    margin-right: 0.5em;
+    margin-bottom: 1em;
+}
+/*  */
+
+
+/* IMAGE STUFF */
+figure {
+    text-align: center;
+	/* background-image: url("images/leather.webp"); */
+    background-color: var(--element-bg-colour);
+    padding: 0.5em;
+    margin-left: auto;
+    margin-right: auto;
+	box-shadow: 2px 2px 2px black;
+	break-inside: avoid;
+}
+a img:hover {
+	transform: scale(1.02, 1.02);
+	box-shadow: 7.5px 7.5px 7.5px black;
+	/* opacity: 0.5 */
+}
+@media only screen and (max-width: 60em) {
+    figure {
+        width: 90%
+    }
+}
+img {
+    height: 20em;
+    max-width: 90%;
+    /* width: 15em; */
+    left: 0;
+    box-shadow: 5px 5px 5px black;
+    margin-bottom: 0.5em;
+}
+@media only screen and (max-width: 60em) {
+    img {
+        height: 15em;
+        /* width: 10em; */
+    }
+}
+video {
+    width: 320px;
+    height: auto;
+    max-width: 95%;
+}
+/*  */
+
+/* Headings etc. */
+h1 {
+    column-span: all;
+}
+h1, h2 {
+    text-align: center;
+    margin-top: 0.5em;
+}
+/*  */
+
+
+/* table stuff */
+table {
+    border-collapse: collapse;
+    column-span: all;
+    margin-bottom: 0.5em;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+td {
+    text-align: right;
+    background-color: #dcdcdc;
+}
+
+th {
+    text-align: center;
+    background-color: var(--element-bg-colour);
+}
+
+td, th {
+    vertical-align: middle;
+    border: 1px solid black;
+    border-radius: 0;
+}
+/*  */
+
+
+@media (pointer:none), (pointer:coarse) { /* Fixes an error where the background img doesn't scroll with the phone screen when you drag */
+	html {
+		overflow-y: auto;
+		height: 100vh;
+	}
+	body {
+		overflow-y: scroll;
+	}
+}
+
+@media only screen and (min-width: 60em) {
+    .sidebar {
+        display: block;
+    }
+	.sidebar a {
+        background-color: white;
+    }
+    .dropdown-content, #interpage>ul {
+        display: none;
+    }
+	body {
+		display: grid;
+		grid-template-areas:
+			'header header header header header'
+			'menu main main main right'
+			'menu footer footer footer footer';
+	}
+	header {
+		grid-area: header;
+	}
+    main {
+		margin-top: 1%;
+        margin-left: 15%;
+		width: 80%;
+		max-width: 80%;
+		/* max-height: 95vh; */
+		grid-area: main;
+	}
+	figure {
+		margin-top: 0%;
+		margin-left: 1em;
+		margin-right: 1em;
+	}
+	p {
+        margin-left: 1em;
+        margin-right: 1em;
+    }
+	#interpage {
+		grid-area: menu;
+		margin: 0.1em;
+        width: 0;
+	}
+	main>nav {
+        margin-left: 1em;
+        margin-right: 1em;
+    }
+}
